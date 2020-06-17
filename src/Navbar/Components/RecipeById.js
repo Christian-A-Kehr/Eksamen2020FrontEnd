@@ -16,7 +16,7 @@ export default function RecipeById(props) {
             .then(res => res.json())
             .then(data => {
 
-                if (!(data === null || data.code == "500")) {
+                if (!(data === null || data.code === "500")) {
                     setRecipe({ ...recipe, id: data.id })
                     setRecipe({ ...recipe, Category: data.category })
                     setRecipe({ ...recipe, Name: data.name })

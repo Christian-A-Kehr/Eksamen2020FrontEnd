@@ -4,10 +4,6 @@ import {
     Switch,
     Route,
     NavLink,
-    Link,
-    Prompt,
-    useParams,
-    useRouteMatch,
     useHistory
 } from "react-router-dom";
 import "./navStyle.css";
