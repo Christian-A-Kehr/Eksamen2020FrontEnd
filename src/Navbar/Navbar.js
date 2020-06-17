@@ -12,10 +12,9 @@ import {
 } from "react-router-dom";
 import "./navStyle.css";
 import facade from "../Login/ApiFacade"
-
-import JokesComp from "./Components/JokesComp";
 import HomeComp from "./Components/HomeComp";
 import Login from "../Login/Login";
+import Mealplan from "./Components/MaelPlaner";
 
 export default function Navbar() {
     // checks if there is a JWT token in local storage and returns true if token is found 
@@ -36,11 +35,12 @@ export default function Navbar() {
                 <Route exact path="/">
                     <HomeComp />
                 </Route>
-                <Route path="/jokes">
-                    <JokesComp 
+                <Route path="/mealplan">
+                    <Mealplan
                         isLoggedIn={isLoggedIn}
                     />
                 </Route>
+
                 <Route path="/login-out">
                     <Login
                         loginMsg={isLoggedIn ? "Logout" : "Login"}
@@ -63,7 +63,7 @@ function Header({ isLoggedIn, loginMsg }) {
             {isLoggedIn && (
                 <React.Fragment>
                     <li>
-                        <NavLink activeClassName="active" to="/jokes">Jokes</NavLink>
+                        <NavLink activeClassName="active" to="/mealplan">Meal planer</NavLink>
                     </li>
                 </React.Fragment>
             )}
